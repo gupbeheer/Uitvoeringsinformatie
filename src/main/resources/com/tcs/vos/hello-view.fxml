@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<?import com.tcs.vos.Trein?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextFormatter?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.tcs.vos.HelloController" alignment="TOP_LEFT" hgap="10" vgap="10">
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+    <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="0" prefHeight="600" prefWidth="800"
+               editable="true">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="NUMMER">
+                <cellValueFactory>
+                    <PropertyValueFactory property="nummer"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="DATUM">
+                <cellValueFactory>
+                    <PropertyValueFactory property="datum"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="VERTREK TIJD">
+                <cellValueFactory>
+                    <PropertyValueFactory property="vertrekTijd"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="AANKOMST TIJD">
+                <cellValueFactory>
+                    <PropertyValueFactory property="aankomstTijd"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <items>
+            <FXCollections fx:factory="observableArrayList" />
+        </items>
+        <sortOrder>
+            <fx:reference source="idColumn"/>
+        </sortOrder>
+    </TableView>
+
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="0"
+          GridPane.rowIndex="2">
+        <TextField fx:id="idField" promptText="Id"
+                   prefWidth="90"/>
+        <TextField fx:id="nummerField" promptText="Trein nummer"
+                   prefWidth="90"/>
+        <DatePicker fx:id="datumField" promptText="Datum"
+                    prefWidth="90"/>
+        <TextField fx:id="vertrekTijdField" promptText="Vertrek tijd"
+                   prefWidth="150" text="12:00:00">
+
+        </TextField>
+        <TextField fx:id="aankomstTijdField" promptText="Aankomst tijd"
+                   prefWidth="150" text="13:12:23"/>
+        <Button text="Toevoegen" onAction="#addTrein"/>
+    </HBox>
+
+    <!--    <Text text="Welcome"-->
+    <!--          GridPane.columnIndex="0" GridPane.rowIndex="0"-->
+    <!--          GridPane.columnSpan="2"/>-->
+
+    <!--    <Label text="User Name:"-->
+    <!--           GridPane.columnIndex="0" GridPane.rowIndex="1"/>-->
+
+    <!--    <TextField-->
+    <!--            GridPane.columnIndex="1" GridPane.rowIndex="1"/>-->
+
+    <!--    <Label text="Password:"-->
+    <!--           GridPane.columnIndex="0" GridPane.rowIndex="2"/>-->
+
+    <!--    <PasswordField fx:id="passwordField"-->
+    <!--                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>-->
+
+    <!--    <HBox spacing="10" alignment="bottom_right"-->
+    <!--          GridPane.columnIndex="1" GridPane.rowIndex="4">-->
+    <!--        <Button text="Sign In"-->
+    <!--                onAction="#onHelloButtonClick"/>-->
+    <!--    </HBox>-->
+
+    <!--    <Text fx:id="actiontarget"-->
+    <!--          GridPane.columnIndex="1" GridPane.rowIndex="6"/>-->
+</GridPane>
