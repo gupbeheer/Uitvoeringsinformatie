@@ -6,6 +6,9 @@ Tabel met trein informatie, mogelijkheid om treinen toe te voegen en te verwijde
 Ander scherm of tabblad of .. grafiek tonen lijkend op TWD (Tijd Weg Diagram)
 Starten m.b.v. Java Web Start
 
+![image](https://user-images.githubusercontent.com/113452958/190177392-120bc7e0-3e3d-4f1b-9881-84939cb30bf1.png)
+
+
 ## WebLogic
 JNDI datasource Oracle DB  
 WebLogic starten en war deployen
